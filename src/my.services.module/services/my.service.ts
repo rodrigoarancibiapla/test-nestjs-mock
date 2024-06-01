@@ -1,12 +1,12 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { MyOtherService } from './my.other.service';
-import { ProductDTO } from './product.dto';
-import { ProductModel } from './product.model';
+import { ProductDTO } from '../models/product.dto';
+import { ProductModel } from '../models/product.model';
 import { InjectMapper } from '@automapper/nestjs';
 import { Mapper } from '@automapper/types';
 
 @Injectable()
-export class MyService2 {
+export class MyService {
   constructor(
     @Inject('otherservice') private myotherService: MyOtherService,
     @InjectMapper() private readonly mapper: Mapper,

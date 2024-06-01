@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MyServicesModule } from './mymodule.module';
-import { MyService } from './my.service';
-import { MyOtherService } from './my.other.service';
+import { MyService } from './services/my.service';
+import { MyOtherService } from './services/my.other.service';
 import { ConfigModule } from '@nestjs/config';
 
 describe('MymoduleModule', () => {

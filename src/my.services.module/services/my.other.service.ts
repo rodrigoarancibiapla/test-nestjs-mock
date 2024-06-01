@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import axios from 'axios';
-import { ProductModel } from './product.model';
+import { ProductModel } from '../models/product.model';
 
 export interface IMyOtherService {
   splitNumber(n: number): string;

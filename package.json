@@ -29,7 +29,8 @@
     "@nestjs/platform-express": "^10.0.0",
     "axios": "^1.6.8",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "typescript-eslint": "^7.10.0"
   },
   "devDependencies": {
     "@automock/adapters.nestjs": "^2.1.0",
@@ -71,7 +72,6 @@
       "**/*.(t|j)s",
       "!main.ts",
       "!app.module.ts"
-    
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"

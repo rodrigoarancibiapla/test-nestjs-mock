@@ -1,5 +1,5 @@
 import { AppService } from './app.service';
-import { MyService } from './my.services.module/my.service';
+import { MyService } from './my.services.module/services/my.service';
 import { TestBed } from '@automock/jest';
 
 describe('AppService', () => {

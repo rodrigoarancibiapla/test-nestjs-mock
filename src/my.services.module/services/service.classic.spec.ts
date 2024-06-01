@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MyService } from './my.service';
-import { productsMockResponse } from './mocks/products';
+import { productsMockResponse } from '../mocks/products';
 import { AutomapperModule } from '@automapper/nestjs';
 import { classes } from '@automapper/classes';
 
-import { ProductMapper } from './product.mapper';
+import { ProductMapper } from '../models/product.mapper';
 
 describe('MymoduleService, classic version', () => {
   let service: MyService;

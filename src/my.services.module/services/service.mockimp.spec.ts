@@ -4,7 +4,7 @@ import { MyOtherService } from './my.other.service';
 import { AutomapperModule } from '@automapper/nestjs';
 import { classes } from '@automapper/classes';
 import { ConfigModule } from '@nestjs/config';
-import { ServiceUriProvider } from './service.uri.provider';
+import { ServiceUriProvider } from '../service.uri.provider';
 
 describe('MyService', () => {
   let myService: MyService;

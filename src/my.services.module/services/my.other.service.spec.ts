@@ -3,8 +3,8 @@ import { MyOtherService } from './my.other.service';
 import axios from 'axios';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConfigService } from '@nestjs/config';
-import { productsMockResponse } from './mocks/products';
-import { ServiceUriProvider } from './service.uri.provider';
+import { productsMockResponse } from '../mocks/products';
+import { ServiceUriProvider } from '../service.uri.provider';
 
 jest.mock('axios');
 
@@ -104,7 +104,7 @@ describe('MyOtherService', () => {
 
     // Mock the resolved value of axios.get
     axiosGetSpy.mockResolvedValueOnce({ data: mockedData });
-    const result = await myOtherService.getProducts();
+     const result = await myOtherService.getProducts();
 
     expect(result).toEqual(mockedData.products);
     expect(axios.get).toHaveBeenCalledWith('https://dummyjson.com/products');
@@ -116,7 +116,9 @@ describe('MyOtherService', () => {
     const axiosGetSpy = jest.spyOn(axios, 'get');
 
     // Mock the resolved value of axios.get
-    axiosGetSpy.mockResolvedValueOnce(mockedError);
+   // axiosGetSpy.mockResolvedValueOnce(mockedError);
+    //axiosGetSpy.mockImplementationOnce(()=>Promise.resolve(mockedError));
+    axiosGetSpy.mockImplementationOnce(()=>Promise.reject(mockedError));
 
     // Call the getProducts method and expect it to throw an error
     await expect(myOtherService.getProducts()).rejects.toThrow(mockedError);

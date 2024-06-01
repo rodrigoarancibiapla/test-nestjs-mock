@@ -1,15 +1,15 @@
-import { MyService } from './my.service';
+import { MyService2 } from './my.service2';
 import { IMyOtherService } from './my.other.service';
 import { TestBed } from '@automock/jest';
-import { productsMockResponse } from './mocks/products';
+import { productsMockResponse } from '../mocks/products';
 import { createMap, type Mapper } from '@automapper/core';
 import { createMapper } from '@automapper/core';
 import { classes } from '@automapper/classes';
-import { ProductModel } from './product.model';
-import { ProductDTO } from './product.dto';
+import { ProductModel } from '../models/product.model';
+import { ProductDTO } from '../models/product.dto';
 
 describe('MymoduleService, autmock version', () => {
-  let service: MyService;
+  let service: MyService2;
   let myOtherServiceMock: jest.Mocked<IMyOtherService> = {
     getProducts: jest.fn(),
     splitNumber: jest.fn(),
@@ -17,7 +17,7 @@ describe('MymoduleService, autmock version', () => {
   };
   let mapper: Mapper;
   beforeAll(() => {
-    const { unit, unitRef } = TestBed.create(MyService).compile();
+    const { unit, unitRef } = TestBed.create(MyService2).compile();
     service = unit;
     myOtherServiceMock = unitRef.get('otherservice');
     mapper = unitRef.get('automapper:nestjs:default');
