@@ -1,11 +1,11 @@
-import { TestService } from './testservice.service';
+import { TestService } from "./testservice.service";
 import {
   ITestDepService,
   TestDepService,
-} from '../testdepservice/testdepservice.service';
-import { TestBed } from '@automock/jest';
+} from "../testdepservice/testdepservice.service";
+import { TestBed } from "@automock/jest";
 
-describe('TestService', () => {
+describe("TestService", () => {
   let service: TestService;
   let testDepServiceMock;
 
@@ -20,7 +20,7 @@ describe('TestService', () => {
     testDepServiceMock = unitRef.get(TestDepService);
   });
 
-  it('should calculate the power of the sum', () => {
+  it("should calculate the power of the sum", () => {
     const a = 2;
     const b = 3;
     const sumResult = 5;

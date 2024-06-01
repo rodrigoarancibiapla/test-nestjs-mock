@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { MyServicesModule } from './my.services.module/mymodule.module';
-import { ConfigModule } from '@nestjs/config';
-import { TestModule } from './testmodule/testmodule.module';
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
+import { MyServicesModule } from "./my.services.module/mymodule.module";
+import { ConfigModule } from "@nestjs/config";
+import { TestModule } from "./testmodule/testmodule.module";
 @Module({
   imports: [
     MyServicesModule,
@@ -15,7 +15,7 @@ import { TestModule } from './testmodule/testmodule.module';
   controllers: [AppController],
   providers: [
     {
-      provide: 'appservice',
+      provide: "appservice",
       useClass: AppService,
     },
   ],

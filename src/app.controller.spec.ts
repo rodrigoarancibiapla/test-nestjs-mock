@@ -1,19 +1,19 @@
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
 
-import { TestBed } from '@automock/jest';
+import { TestBed } from "@automock/jest";
 
-describe('AppController', () => {
+describe("AppController", () => {
   let appController: AppController;
   let appServiceMock: jest.Mocked<AppService>;
 
   beforeEach(async () => {
     const { unit, unitRef } = TestBed.create(AppController).compile();
     appController = unit;
-    appServiceMock = unitRef.get('appservice');
+    appServiceMock = unitRef.get("appservice");
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return stock summary!"', async () => {
       const mockedSummary = {
         Apple: 128,

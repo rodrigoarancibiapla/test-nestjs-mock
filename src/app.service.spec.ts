@@ -1,23 +1,23 @@
-import { AppService } from './app.service';
-import { MyService } from './my.services.module/services/my.service';
-import { TestBed } from '@automock/jest';
+import { AppService } from "./app.service";
+import { MyService } from "./my.services.module/services/my.service";
+import { TestBed } from "@automock/jest";
 
-describe('AppService', () => {
+describe("AppService", () => {
   let appService: AppService;
   let myServiceMock: jest.Mocked<MyService>;
 
   beforeEach(async () => {
     const { unit, unitRef } = TestBed.create(AppService).compile();
     appService = unit;
-    myServiceMock = unitRef.get('myservice');
+    myServiceMock = unitRef.get("myservice");
   });
 
-  it('should return stock summary', async () => {
+  it("should return stock summary", async () => {
     // Mocked products data
     const mockedProducts = [
-      { id: 1, brand: 'Apple', price: 549, stock: 94 },
-      { id: 2, brand: 'Apple', price: 899, stock: 34 },
-      { id: 3, brand: 'Samsung', price: 1249, stock: 36 },
+      { id: 1, brand: "Apple", price: 549, stock: 94 },
+      { id: 2, brand: "Apple", price: 899, stock: 34 },
+      { id: 3, brand: "Samsung", price: 1249, stock: 36 },
     ];
 
     // Mock the return value of getProducts method
@@ -33,7 +33,7 @@ describe('AppService', () => {
     });
   });
 
-  it('should handle empty products array', async () => {
+  it("should handle empty products array", async () => {
     // Mock an empty array for products
     myServiceMock.getProducts.mockResolvedValue([]);
 

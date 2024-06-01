@@ -1,10 +1,10 @@
 // test.module.spec.ts
-import { Test, TestingModule } from '@nestjs/testing';
-import { TestService } from './testservice/testservice.service';
-import { TestDepService } from './testdepservice/testdepservice.service';
-import { TestModule } from './testmodule.module';
+import { Test, TestingModule } from "@nestjs/testing";
+import { TestService } from "./testservice/testservice.service";
+import { TestDepService } from "./testdepservice/testdepservice.service";
+import { TestModule } from "./testmodule.module";
 
-describe('TestModule', () => {
+describe("TestModule", () => {
   let testService: TestService;
   let testDepService: TestDepService;
 
@@ -17,11 +17,11 @@ describe('TestModule', () => {
     testDepService = module.get<TestDepService>(TestDepService);
   });
 
-  it('should provide TestService', () => {
+  it("should provide TestService", () => {
     expect(testService).toBeDefined();
   });
 
-  it('should provide TestDepService', () => {
+  it("should provide TestDepService", () => {
     expect(testDepService).toBeDefined();
   });
 });

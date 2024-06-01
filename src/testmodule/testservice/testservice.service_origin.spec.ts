@@ -1,9 +1,9 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { TestService } from './testservice.service';
-import { TestDepService } from '../testdepservice/testdepservice.service';
-import { ConfigService } from '@nestjs/config';
+import { Test, TestingModule } from "@nestjs/testing";
+import { TestService } from "./testservice.service";
+import { TestDepService } from "../testdepservice/testdepservice.service";
+import { ConfigService } from "@nestjs/config";
 
-describe('TestserviceService', () => {
+describe("TestserviceService", () => {
   let service: TestService;
   let depService: TestDepService;
   beforeEach(async () => {
@@ -15,15 +15,15 @@ describe('TestserviceService', () => {
     depService = module.get<TestDepService>(TestDepService);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(service).toBeDefined();
   });
 
-  it('depService should be defined', () => {
+  it("depService should be defined", () => {
     expect(depService).toBeDefined();
   });
 
-  it('should return powwe of two of a sum', () => {
+  it("should return powwe of two of a sum", () => {
     expect(service.powSum(1, 2)).toEqual(9);
   });
 });

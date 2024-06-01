@@ -1,14 +1,14 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { MyOtherService } from './my.other.service';
-import { ProductDTO } from '../models/product.dto';
-import { ProductModel } from '../models/product.model';
-import { InjectMapper } from '@automapper/nestjs';
-import { Mapper } from '@automapper/types';
+import { Inject, Injectable } from "@nestjs/common";
+import { MyOtherService } from "./my.other.service";
+import { ProductDTO } from "../models/product.dto";
+import { ProductModel } from "../models/product.model";
+import { InjectMapper } from "@automapper/nestjs";
+import { Mapper } from "@automapper/types";
 
 @Injectable()
 export class MyService2 {
   constructor(
-    @Inject('otherservice') private myotherService: MyOtherService,
+    @Inject("otherservice") private myotherService: MyOtherService,
     @InjectMapper() private readonly mapper: Mapper,
   ) {}
 

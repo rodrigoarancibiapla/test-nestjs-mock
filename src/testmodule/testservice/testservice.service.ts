@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { TestDepService } from '../testdepservice/testdepservice.service';
+import { Injectable } from "@nestjs/common";
+import { TestDepService } from "../testdepservice/testdepservice.service";
 
 export interface ITestService {
   powSum(a, b);

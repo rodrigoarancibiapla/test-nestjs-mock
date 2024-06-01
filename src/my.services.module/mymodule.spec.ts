@@ -1,10 +1,10 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { MyServicesModule } from './mymodule.module';
-import { MyService } from './services/my.service';
-import { MyOtherService } from './services/my.other.service';
-import { ConfigModule } from '@nestjs/config';
+import { Test, TestingModule } from "@nestjs/testing";
+import { MyServicesModule } from "./mymodule.module";
+import { MyService } from "./services/my.service";
+import { MyOtherService } from "./services/my.other.service";
+import { ConfigModule } from "@nestjs/config";
 
-describe('MymoduleModule', () => {
+describe("MymoduleModule", () => {
   let module: TestingModule;
   let mymoduleService: MyService;
   let mymoduleOtherService: MyOtherService;
@@ -18,18 +18,18 @@ describe('MymoduleModule', () => {
       ],
     }).compile();
 
-    mymoduleService = module.get<MyService>('myservice');
-    mymoduleOtherService = module.get<MyOtherService>('otherservice');
+    mymoduleService = module.get<MyService>("myservice");
+    mymoduleOtherService = module.get<MyOtherService>("otherservice");
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(module).toBeDefined();
   });
 
-  it('should provide the MymoduleService', () => {
+  it("should provide the MymoduleService", () => {
     expect(mymoduleService).toBeDefined();
   });
-  it('should provide the MymoduleService', () => {
+  it("should provide the MymoduleService", () => {
     expect(mymoduleOtherService).toBeDefined();
   });
 });

@@ -1,10 +1,10 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { IMyService } from './my.services.module/my.service.interface';
+import { Inject, Injectable } from "@nestjs/common";
+import { IMyService } from "./my.services.module/my.service.interface";
 
 @Injectable()
 export class AppService {
-  constructor(@Inject('myservice') private myService: IMyService) {}
-
+  constructor(@Inject("myservice") private myService: IMyService) {}
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async getStockSummary(): Promise<any> {
     const products = await this.myService.getProducts();
 

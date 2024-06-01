@@ -1,11 +1,11 @@
-import { Module } from '@nestjs/common';
-import { MyOtherService } from './services/my.other.service';
-import { classes } from '@automapper/classes';
-import { AutomapperModule } from '@automapper/nestjs';
-import { ConfigService } from '@nestjs/config';
-import { ProductMapper } from './models/product.mapper';
-import { MyService } from './services/my.service';
-import { ServiceUriProvider } from './service.uri.provider';
+import { Module } from "@nestjs/common";
+import { MyOtherService } from "./services/my.other.service";
+import { classes } from "@automapper/classes";
+import { AutomapperModule } from "@automapper/nestjs";
+import { ConfigService } from "@nestjs/config";
+import { ProductMapper } from "./models/product.mapper";
+import { MyService } from "./services/my.service";
+import { ServiceUriProvider } from "./service.uri.provider";
 
 @Module({
   imports: [
@@ -14,12 +14,12 @@ import { ServiceUriProvider } from './service.uri.provider';
     }),
   ],
   providers: [
-    { provide: 'myservice', useClass: MyService },
-    { provide: 'otherservice', useClass: MyOtherService },
+    { provide: "myservice", useClass: MyService },
+    { provide: "otherservice", useClass: MyOtherService },
     ConfigService,
     ProductMapper,
     ServiceUriProvider,
   ],
-  exports: ['myservice','otherservice'],
+  exports: ["myservice", "otherservice"],
 })
 export class MyServicesModule {}
